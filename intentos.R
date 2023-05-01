@@ -23,3 +23,13 @@ df%>%
   group_by(StockCode)%>%
   summarise(mean(Price))
 
+#12.	Calcula el número de productos por pedido
+df%>%
+  group_by(Invoice)%>%
+  count(Invoice)
+
+#13.	Calcula el precio por pedido
+df%>%
+  group_by(Invoice)%>%
+  summarise(suma=sum(Price*Quantity))
+
